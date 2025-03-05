@@ -1,0 +1,65 @@
+.carrusel-container {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Ajusta la altura del carrusel */
+  overflow: hidden;
+}
+
+.carrusel-wrapper {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  height: 100%;
+}
+
+.carrusel-image {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.carrusel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Opacidad negra */
+}
+
+.carrusel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carrusel-button.prev {
+  left: 10px;
+}
+
+.carrusel-button.next {
+  right: 10px;
+}
+
+.carrusel-text {
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .carrusel-container {
+    height: 400px; /* Ajusta la altura del carrusel para pantallas más pequeñas */
+  }
+
+  .carrusel-button {
+    padding: 5px;
+  }
+}
