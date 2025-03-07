@@ -1,5 +1,5 @@
 import React from 'react';
-import colegioIcon from '../assets/images/colegio-icon.jpg';
+import colegioIcon from '../assets/images/colegio-icon.png';
 import facebookIcon from '../assets/images/facebook-icon.png';
 import instagramIcon from '../assets/images/instagram-icon.png';
 import locationIcon from '../assets/images/location-icon.png';
@@ -12,7 +12,10 @@ function Header() {
       {/* Sección izquierda: colegioIcon y nombre del colegio */}
       <div className="header-left">
         <img src={colegioIcon} alt="Logo Colegio" className="colegioIcon" />
-        <h1 className="header-title">Colegio Cristiano Le Beau Jour</h1>
+        <div className="header-text">
+            <h1 className="header-title-1">Colegio Cristiano</h1>
+            <h1 className="header-title-2">Le Beau Jour</h1>
+          </div>
       </div>
 
       {/* Sección derecha: Redes Sociales y Ubicación */}
@@ -30,7 +33,7 @@ function Header() {
           <img src={instagramIcon} alt="Instagram" className="icon" />
           <div className="header-text">
             <span className="header-label">Instagram</span>
-            <b>@lebeaujour</b>
+            <b>@colegiolebeaujour</b>
           </div>
         </div>
 
