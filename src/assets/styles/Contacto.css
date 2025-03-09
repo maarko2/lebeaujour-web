@@ -1,77 +1,106 @@
+/* Estilos generales 
 .contact-page {
-  background-size: cover;
-  background-position: center;
-  padding: 20px;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}*/
 
 .contact-container {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  max-width: 500px;
   text-align: center;
-  margin-top: 70px;
+  margin: 0 auto;
 }
 
 .title-contact {
-  font-size: 1.5em;
+  font-size: 2em;
+  color: #333;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
+/* Sección de información de contacto */
 .contact-info {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 20px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.contact-item:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .contact-item i {
-  font-size: 1.5em;
-  color: #b71c1c;
+  font-size: 2.8em;
+  color: #b92929;
+  transition: transform 0.3s ease-in-out;
 }
 
-.contact-item p {
+
+.contact-item:hover i {
+  transform: scale(1.2);
+}
+
+.contact-label {
+  font-weight: bold;
+  color: #555;
+  text-align: left;
+}
+
+.contact-detail {
   margin: 0;
+  color: #777;
 }
 
+/* Redes sociales */
 .social-media {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
-.social-media p {
-  margin-bottom: 10px;
+.social-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.social-icons i {
-  font-size: 1.5em;
-  color: #b71c1c;
+.social-icon {
+  font-size: 3.8em;
+  color: #b92929;
+  transition: transform 0.3s, color 0.3s;
 }
 
-/* Responsivo */
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #770505;
+}
+
+/* Responsividad */
 @media (max-width: 600px) {
   .contact-container {
-    padding: 10px;
+    padding: 20px;
   }
 
   .contact-item {
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .social-icons {
-    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }

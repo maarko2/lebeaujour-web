@@ -21,7 +21,6 @@ const Noticias = () => {
 
   return (
     <div>
-      <Header />
       <Navbar />
       <h1 className="title-news">Últimas Novedades</h1>
       <p className="subtitle-news">Bienvenido a la página de noticias del Colegio Le Beau Jour.</p>

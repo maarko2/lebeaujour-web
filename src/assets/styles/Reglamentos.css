@@ -1,0 +1,139 @@
+/* Estilos generales */
+body {
+  background-color: #f0f0f0; /* Color gris pastel muy claro */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.reglamentos-container {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Título principal */
+.title-reglamentos {
+  font-size: 48px;
+  font-weight: bold;
+  color: #181312;
+  margin-bottom: 20px;
+  font-family: 'Kanit', sans-serif;
+}
+
+/* Contenedor de la información */
+.reglamentos-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Secciones de Reglamentos y Protocolos */
+.reglamentos-section {
+  background: white;
+  padding: 25px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Subtítulos */
+.reglamentos-subtitle {
+  font-size: 32px;
+  color: #b71c1c;
+  margin-bottom: 10px;
+  font-family: 'Kanit', sans-serif;
+}
+
+/* Texto */
+.reglamentos-text {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .title-reglamentos {
+    font-size: 36px;
+  }
+  
+  .reglamentos-subtitle {
+    font-size: 28px;
+  }
+
+  .reglamentos-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-reglamentos {
+    font-size: 30px;
+  }
+
+  .reglamentos-subtitle {
+    font-size: 24px;
+  }
+
+  .reglamentos-text {
+    font-size: 14px;
+  }
+
+  .reglamentos-section {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .reglamentos-container {
+    padding: 10px;
+  }
+
+  .reglamentos-section {
+    padding: 10px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}

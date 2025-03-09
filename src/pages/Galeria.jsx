@@ -24,13 +24,6 @@ const years = [
       'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
       'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
     ]
-  },
-  {
-    year: 2022,
-    months: [
-      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
-    ]
   }
 ];
 
@@ -85,7 +78,6 @@ export default function Galeria() {
 
   return (
     <div>
-      <Header />
       <Navbar />
       <h1 className="title-news">Galería de Imágenes</h1>
       <div className="galeria-content">

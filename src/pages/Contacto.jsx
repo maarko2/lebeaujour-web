@@ -6,33 +6,37 @@ import '../assets/styles/Contacto.css';
 export default function Contacto() {
   return (
     <div className="contact-page">
-      <Header />
       <Navbar />
       <div className="contact-container">
         <h1 className="title-contact">Datos de Contacto</h1>
         <div className="contact-info">
           <div className="contact-item">
-            <i className="fas fa-phone"></i>
-            <p>Teléfono Fijo</p>
-            <p>32 3241150</p>
+            <i class="fas fa-phone-square-alt"></i>
+            <div>
+              <p className="contact-label">Teléfono Fijo</p>
+              <p className="contact-detail">32 3241150</p>
+            </div>
           </div>
           <div className="contact-item">
             <i className="fas fa-envelope"></i>
-            <p>Correo Electrónico</p>
-            <p>Colegio_lebeaujour@hotmail.com</p>
+            <div>
+              <p className="contact-label">Correo Electrónico</p>
+              <p className="contact-detail">Colegio_lebeaujour@hotmail.com</p>
+            </div>
           </div>
           <div className="contact-item">
             <i className="fas fa-map-marker-alt"></i>
-            <p>Ubicación</p>
-            <p>23 Norte Calle Dos, 2039</p>
+            <div>
+              <p className="contact-label">Ubicación</p>
+              <p className="contact-detail">23 Norte Calle Dos, 2039</p>
+            </div>
           </div>
         </div>
         <div className="social-media">
-          <p>Redes Sociales</p>
+          <p className="social-title">Síguenos en nuestras redes</p>
           <div className="social-icons">
-            <i className="fab fa-facebook"></i>
-            <i className="fab fa-twitter"></i>
-            <i className="fab fa-instagram"></i>
+            <a href="https://www.facebook.com/CollegeLeBeauJour/?locale=es_LA" className="social-icon"><i className="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/colegiolebeaujour/" className="social-icon"><i className="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
