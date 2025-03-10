@@ -5,65 +5,88 @@ import '../assets/styles/Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="navbar">
-      <div className="navbar-content">
-        <img src={colegioIcon} alt="Logo Colegio" className="colegioIcon" />
-        <button className="menu-toggle" onClick={toggleMenu}>
-          ☰
-        </button>
-        <ul className={`navList ${isOpen ? 'open' : ''}`}>
-          <li className="navItem">
-            <Link to="/" className="navLink">Inicio</Link>
-          </li>
-          <li className="navItem">
-            <Link to="/noticias" className="navLink">Noticias</Link>
-          </li>
-          <li className="navItem">
-            <Link to="/galeria" className="navLink">Galeria</Link>
-          </li>
-          <li className="navItem">
-            <Link to="/aboutus" className="navLink">Quíenes Somos</Link>
-          </li>
-          <li className="navItem">
-            <Link to="/reglamentos" className="navLink">Reglamentos y Protocolos</Link>
-          </li>
-          <li className="navItem">
-            <Link to="/simce" className="navLink">SIMCE</Link>
-          </li>
-        </ul>
-      </div>
-      {isOpen && (
-        <div className="overlay" onClick={toggleMenu}>
-          <div className="popup-menu">
-            <ul className="popup-navList">
-              <li className="popup-navItem">
-                <Link to="/" className="popup-navLink" onClick={toggleMenu}>Inicio</Link>
-              </li>
-              <li className="popup-navItem">
-                <Link to="/noticias" className="popup-navLink" onClick={toggleMenu}>Noticias</Link>
-              </li>
-              <li className="popup-navItem">
-                <Link to="/galeria" className="popup-navLink" onClick={toggleMenu}>Galeria</Link>
-              </li>
-              <li className="popup-navItem">
-                <Link to="/aboutus" className="popup-navLink" onClick={toggleMenu}>Quíenes Somos</Link>
-              </li>
-              <li className="popup-navItem">
-                <Link to="/reglamentos" className="popup-navLink" onClick={toggleMenu}>Reglamentos y Protocolos</Link>
-              </li>
-              <li className="popup-navItem">
-                <Link to="/simce" className="popup-navLink" onClick={toggleMenu}>SIMCE</Link>
-              </li>
-            </ul>
+      {/* Versión desktop: contenedor único con fondo rojo */}
+      <div className="navbar-container">
+        <div className="logo-container">
+          <Link to="/">
+            <img src={colegioIcon} alt="Logo Colegio" className="colegioIcon" />
+          </Link>
+          <div className="header-text">
+            <h1 className="header-title-1">Colegio Cristiano</h1>
+            <h1 className="header-title-2">Le Beau Jour</h1>
           </div>
         </div>
-      )}
+        <div className="menu-container">
+          <ul className="navList">
+            <li className="navItem">
+              <Link to="/" className="navLink">Inicio</Link>
+            </li>
+            <li className="navItem">
+              <Link to="/noticias" className="navLink">Noticias</Link>
+            </li>
+            <li className="navItem">
+              <Link to="/galeria" className="navLink">Galeria</Link>
+            </li>
+            <li className="navItem">
+              <Link to="/aboutus" className="navLink">Quíenes Somos</Link>
+            </li>
+            <li className="navItem">
+              <Link to="/reglamentos" className="navLink">Reglamentos y Protocolos</Link>
+            </li>
+            <li className="navItem">
+              <Link to="/simce" className="navLink">SIMCE</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Menú móvil */}
+      <div className="mobile-menu">
+        <div className="mobile-header">
+          <div className="logo-container">
+            <Link to="/">
+              <img src={colegioIcon} alt="Logo Colegio" className="colegioIcon" />
+            </Link>
+            <div className="header-text">
+              <h1 className="header-title-1">Colegio Cristiano</h1>
+              <h1 className="header-title-2">Le Beau Jour</h1>
+            </div>
+          </div>
+          <button className="menu-toggle" onClick={toggleMenu}>
+            ☰
+          </button>
+        </div>
+        {isOpen && (
+          <div className="overlay" onClick={toggleMenu}>
+            <div className="popup-menu" onClick={(e) => e.stopPropagation()}>
+              <ul className="popup-navList">
+                <li className="popup-navItem">
+                  <Link to="/" className="popup-navLink" onClick={toggleMenu}>Inicio</Link>
+                </li>
+                <li className="popup-navItem">
+                  <Link to="/noticias" className="popup-navLink" onClick={toggleMenu}>Noticias</Link>
+                </li>
+                <li className="popup-navItem">
+                  <Link to="/galeria" className="popup-navLink" onClick={toggleMenu}>Galeria</Link>
+                </li>
+                <li className="popup-navItem">
+                  <Link to="/aboutus" className="popup-navLink" onClick={toggleMenu}>Quíenes Somos</Link>
+                </li>
+                <li className="popup-navItem">
+                  <Link to="/reglamentos" className="popup-navLink" onClick={toggleMenu}>Reglamentos y Protocolos</Link>
+                </li>
+                <li className="popup-navItem">
+                  <Link to="/simce" className="popup-navLink" onClick={toggleMenu}>SIMCE</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };

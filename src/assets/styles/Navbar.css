@@ -1,172 +1,176 @@
-/* Estilos generales para el navbar */
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor general del navbar */
 .navbar {
+  width: 100%;
+  background: #b71c1c; /* Fondo rojo completo */
+  position: relative;
+  z-index: 1000;
+}
+
+/* Contenedor desktop: centrado y con ancho máximo */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo centrado */
+.logo-container {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right, #ffffff 30%, #b71c1c 70%);
-  padding: 10px 0;
-  position: relative;
-}
-
-.navbar::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 70%;
-  height: 100%;
-  background: #b71c1c;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  z-index: 1;
-}
-
-.navbar-content {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  justify-content: space-between;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 10px;
 }
 
 .colegioIcon {
-  height: 60px;
-  margin-right: 20px;
+  height: 80px;
+  width: 80px;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
-  color: #fff;
+/* Menú desktop */
+.menu-container {
+  width: 100%;
 }
 
 .navList {
-  display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.navItem {
-  margin: 0 15px;
+/* Importar la fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+.header-text {
+  color: white;
+  margin-left: 15px;
+  margin-top: 15px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* Cambia 'Arial' por la fuente que prefieras */
+}
+
+.header-title-1,
+.header-title-2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
 }
 
 .navLink {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  font-size: 1.1em;
   position: relative;
+  transition: color 0.3s ease;
 }
 
+/* Efecto subrayado */
 .navLink::after {
   content: '';
   position: absolute;
+  bottom: -5px;
+  left: 0;
   width: 0;
   height: 2px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
   background: #fff;
   transition: width 0.3s ease;
 }
 
 .navLink:hover::after {
   width: 100%;
-  left: 0;
-  background: #fff;
 }
 
-.navLink:hover {
-  color: #ffcccc;
+/* MENÚ MÓVIL */
+.mobile-menu {
+  display: none;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
-  .navbar-content {
-    justify-content: space-between;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .navList {
+  /* Ocultamos la versión desktop */
+  .navbar-container {
     display: none;
   }
-
-  .navList.open {
+  .mobile-menu {
+    display: block;
+  }
+  
+  .mobile-header {
+    background: #b71c1c;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: 60px;
+    padding: 10px 20px;
+  }
+  
+  .mobile-header .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1100;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .popup-menu {
     background: #b71c1c;
-    z-index: 3;
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+    animation: slideIn 0.3s ease-out;
   }
-
-  .navItem {
-    margin: 10px 0;
+  
+  @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
   }
-}
-
-/* Estilos para el popup-menu */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 4;
-}
-
-.popup-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background: #b71c1c;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 5;
-  animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
+  
+  .popup-navList {
+    list-style: none;
+    margin-top: 20px;
   }
-  to {
-    transform: translateX(0);
+  
+  .popup-navItem {
+    margin: 15px 0;
   }
-}
-
-.popup-navList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.popup-navItem {
-  margin: 15px 0;
-}
-
-.popup-navLink {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.popup-navLink:hover {
-  color: #ffcccc;
+  
+  .popup-navLink {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+  }
+  
+  .popup-navLink:hover {
+    color: #ffcccc;
+  }
 }
