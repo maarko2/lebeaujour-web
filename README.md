@@ -15,7 +15,9 @@ Galería: Espacio visual para exhibir actividades y eventos importantes.
 Quienes Somos: Información sobre la historia, misión y valores del colegio.
 Contáctanos: Formulario y datos de contacto para facilitar la comunicación con la institución.
 Diseño Responsive: Optimizado para visualización en distintos dispositivos (solo web).
-Tecnologías Utilizadas
+
+## Tecnologías Utilizadas
+
 **Frontend:**
 - React: Biblioteca de JavaScript para crear interfaces interactivas.
 
