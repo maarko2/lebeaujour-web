@@ -16,8 +16,8 @@ const Navbar = () => {
             <img src={colegioIcon} alt="Logo Colegio" className="colegioIcon" />
           </Link>
           <div className="header-text">
-            <h1 className="header-title-1">Colegio Cristiano</h1>
-            <h1 className="header-title-2">Le Beau Jour</h1>
+            <h1 className="header-title">Colegio Cristiano</h1>
+            <h1 className="header-title">Le Beau Jour</h1>
           </div>
         </div>
         <div className="menu-container">
@@ -52,8 +52,8 @@ const Navbar = () => {
               <img src={colegioIcon} alt="Logo Colegio" className="colegioIcon" />
             </Link>
             <div className="header-text">
-              <h1 className="header-title-1">Colegio Cristiano</h1>
-              <h1 className="header-title-2">Le Beau Jour</h1>
+              <h1 className="header-title">Colegio Cristiano</h1>
+              <h1 className="header-title">Le Beau Jour</h1>
             </div>
           </div>
           <button className="menu-toggle" onClick={toggleMenu}>

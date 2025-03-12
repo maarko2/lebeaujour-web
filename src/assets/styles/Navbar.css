@@ -48,20 +48,18 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+  
 }
 
 /* Importar la fuente Roboto desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 .header-text {
   color: white;
   margin-left: 15px;
   margin-top: 15px;
   text-align: center;
-  font-family: 'Roboto', sans-serif; /* Cambia 'Arial' por la fuente que prefieras */
 }
 
-.header-title-1,
-.header-title-2 {
+.header-title{
   margin: 0;
   font-size: 1.5rem;
   color: white;
