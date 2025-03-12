@@ -1,0 +1,91 @@
+/* Ajuste básico de box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fuente y reset básico */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #212529;
+}
+
+/* Contenedor principal */
+.box-noticias {
+  padding: 40px 20px;
+}
+
+/* Título de la sección (opcional) */
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Contenedor row flexible */
+.row.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Ajusta el ancho de cada columna en pantallas grandes */
+.col-lg-4 {
+  flex: 1 1 calc(33.333% - 20px); /* 3 columnas */
+  min-width: 250px; /* evita que se rompa en pantallas muy pequeñas */
+}
+
+/* Tarjeta de noticia */
+.noticia {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de la noticia */
+.img-noticia {
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  position: relative;
+}
+
+/* Contenido de la noticia */
+.cuerpo-noticia {
+  text-align: center;
+  padding: 20px;
+  min-height: 180px;
+}
+
+/* Título y texto */
+.cuerpo-noticia h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cuerpo-noticia p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Enlace "Leer más" */
+.cuerpo-noticia a {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.cuerpo-noticia a:hover {
+  background-color: #0056b3;
+}

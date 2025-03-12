@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Carrusel from '../components/Carrusel';
 import Footer from '../components/Footer';
 import '../assets/styles/Home.css';
+import NoticiasDestacadas from '../components/NoticiasDestacadas';
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
         </Link>
       </div>
       <Carrusel />
+      <NoticiasDestacadas />
       <Footer />
     </div>
   );
