@@ -12,24 +12,21 @@ export default function AboutUs() {
       <img src={imagen} alt="Imagen Colegio" className="img-aboutus" />
       <div className="aboutus-hero">
         <div className="hero-text">
-          <h1 className="hero-title">Quíenes Somos</h1>
+          <h1 className="hero-tittle">
+            NUESTRO<br/>COLEGIO</h1>
           <p className="hero-paragraph">
             Somos una organización sin fines de lucro que busca mejorar la educación. 
             Nuestro objetivo es brindar una educación de calidad a niños y jóvenes 
             para que puedan tener un futuro mejor, lleno de oportunidades.
           </p>
+
         </div>
       </div>
-      <div className="aboutus-hero">
-        <div className="hero-text">
-          <h1 className="hero-title">Nuestra Misión</h1>
-          <p className="hero-paragraph">
-            Nuestra misión es educar a los niños y jóvenes para que puedan tener un 
-            futuro mejor. Creemos que la educación es la clave por la cual trabajamos 
-            incansablemente para brindar una educación de calidad a todos los niños y jóvenes.
-          </p>
-        </div>
-      </div>
+      <div className="images-container">
+            <img src="ruta-de-la-imagen-1.jpg" alt="Imagen 1" />
+            <img src="ruta-de-la-imagen-2.jpg" alt="Imagen 2" />
+            <img src="ruta-de-la-imagen-3.jpg" alt="Imagen 3" />
+          </div>
       <Footer />
     </div>
   );
