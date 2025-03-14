@@ -13,7 +13,7 @@
 /* IMAGEN PRINCIPAL */
 .img-aboutus {
   width: 100vw;
-  height: 300px;
+  height: 250px;
   max-width: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 0;
@@ -26,26 +26,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 40px 20px;
   border-radius: 8px;
   margin-top: 20px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* TEXTO DEL HERO: Disposición horizontal */
 .hero-text {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: left;
   gap: 40px;
   /* Se elimina margen negativo para que el contenido quede centrado */
   padding: 0 20px;
 }
 
 /* Título del Hero */
-.hero-tittle {
+.hero-tittle-1 {
   font-size: 3.2rem;
   color: #0f0f0f;
   margin: 0;
@@ -53,18 +54,37 @@
   font-weight: 900;
   text-align: left;
   flex-direction: column;
+  line-height: 1;
+  margin-right: 70px;
 }
+
+.hero-tittle-2 {
+  font-size: 3.2rem;
+  color: #0f0f0f;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  text-align: left;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.hero-subtittle-2 {
+  font-size: 2.1rem; /* Ajusta este valor a tu preferencia */
+  font-weight: 900; /* Mantén o ajusta el peso si quieres que siga siendo negrita */
+}
+
 
 .images-container {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   gap: 20px;              /* Espacio entre las imágenes */
-  margin: 20px 0;         /* Espacio vertical con el resto del contenido */
+  margin: 20px 0;      /* Espacio vertical con el resto del contenido */
 }
 
 .images-container img {
-  width: 200px;           /* Ajusta el ancho deseado */
-  height: auto;           /* Mantiene la proporción de la imagen */
+  width: 325px;           /* Ajusta el ancho deseado */
+  height: 200px;           /* Mantiene la proporción de la imagen */
   object-fit: cover;      /* Recorta la imagen si es más grande que el contenedor */
   border-radius: 8px;     /* Opcional: esquinas redondeadas */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Opcional: sombra */

@@ -6,6 +6,14 @@
   justify-content: center;
 }*/
 
+.map-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+
+
 .contact-container {
   background: #fff;
   border-radius: 12px;
