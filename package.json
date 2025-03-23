@@ -15,6 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-backend": "node backend/server.js",
+    "start-frontend": "webpack serve" ,
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -33,7 +33,7 @@ export default function Contacto() {
           </div>
         </div>
         <div className="social-media">
-          <p className="social-title">Síguenos en nuestras redes</p>
+          <p className="social-title">Síguenos en nuestras Redes Sociales</p>
           <div className="social-icons">
             <a href="https://www.facebook.com/CollegeLeBeauJour/?locale=es_LA" className="social-icon">
               <i className="fab fa-facebook"></i>
