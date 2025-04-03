@@ -1,23 +1,23 @@
-// backend/server.js
+require('dotenv').config(); // Carga las variables de entorno
+
 const express = require('express');
+const cors = require('cors'); // Habilita CORS
 const app = express();
-const facebookRoutes = require('./routes/facebook'); // importa tus rutas
+const facebookRoutes = require('./routes/facebook'); // Importa las rutas
 
-// Middleware (por ejemplo, para parsear JSON)
-app.use(express.json());
+// Middleware
+app.use(cors()); // Evita errores de CORS si el frontend está en otro dominio
+app.use(express.json()); // Permite parsear JSON
 
-// Usa las rutas en /api
+// Rutas
 app.use('/api', facebookRoutes);
 
 app.get('/', (req, res) => {
     res.send('Backend funcionando correctamente 🚀');
-  });
-  
-
-// Arranca el servidor en el puerto 3000 (o el que quieras)
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
 
-
+// Configurar el puerto
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});

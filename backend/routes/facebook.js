@@ -1,20 +1,24 @@
 // routes/facebook.js
+require('dotenv').config(); // Si no lo cargas en tu archivo principal, puedes cargarlo aquí
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-// Endpoint para obtener fotos de Facebook
 router.get('/facebook-photos', async (req, res) => {
   try {
     // 1) Obtener el año desde query params (ej: ?year=2025)
     const year = req.query.year;
 
-    // 2) Configura tu PAGE_ID y ACCESS_TOKEN
-    const pageId = 'TU_PAGE_ID';
-    const accessToken = 'TU_ACCESS_TOKEN';
+    // Validar que 'year' sea un número de 4 dígitos
+    if (!/^\d{4}$/.test(year)) {
+      return res.status(400).json({ error: "Año inválido. Debe tener 4 dígitos." });
+    }
 
-    // 3) Construye la URL para la Graph API de Facebook
-    //    Ajusta la versión de la API según la más reciente que uses
+    // 2) Obtener el PAGE_ID y ACCESS_TOKEN desde variables de entorno
+    const pageId = process.env.PAGE_ID || 'TU_PAGE_ID';
+    const accessToken = process.env.ACCESS_TOKEN || 'TU_ACCESS_TOKEN';
+
+    // 3) Construir la URL para la Graph API de Facebook
     const fbUrl = `https://graph.facebook.com/v16.0/${pageId}/photos?fields=images,created_time&access_token=${accessToken}`;
 
     // 4) Llamar a la Graph API con axios
@@ -28,7 +32,6 @@ router.get('/facebook-photos', async (req, res) => {
     });
 
     // 6) Extraer la URL principal de cada foto
-    //    (images[0] suele ser la de mayor resolución, pero revisa la respuesta para elegir la que necesites)
     const photoUrls = filteredPhotos.map(photo => photo.images[0].source);
 
     // 7) Devolver las fotos en un JSON
