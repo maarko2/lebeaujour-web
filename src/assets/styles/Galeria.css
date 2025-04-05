@@ -37,3 +37,155 @@
   text-align: center;
   font-size: 1.5rem;
 }
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+.galeria-container {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.galeria-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.galeria-header h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.galeria-header p {
+  color: #6c757d;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.folders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+.folder-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.folder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #007bff, #6610f2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.folder-card:hover::before {
+  transform: scaleX(1);
+}
+
+.folder-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+  padding: 1rem;
+}
+
+.folder-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.folder-info {
+  margin-top: 1rem;
+}
+
+.folder-info h3 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.folder-info p {
+  color: #6c757d;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.folder-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-color: #007bff;
+}
+
+.folder-card:hover .folder-icon {
+  transform: scale(1.1);
+}
+
+.folder-card:hover .folder-info p {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .galeria-container {
+    padding: 2rem 1rem;
+  }
+
+  .galeria-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .galeria-header {
+    margin-bottom: 2rem;
+  }
+
+  .folders-grid {
+    gap: 1.5rem;
+  }
+
+  .folder-card {
+    padding: 1.5rem;
+  }
+
+  .folder-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .folder-info h3 {
+    font-size: 1.5rem;
+  }
+}

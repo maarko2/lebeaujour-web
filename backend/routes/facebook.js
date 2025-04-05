@@ -1,44 +1,60 @@
 // routes/facebook.js
-require('dotenv').config(); // Si no lo cargas en tu archivo principal, puedes cargarlo aquí
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
 router.get('/facebook-photos', async (req, res) => {
   try {
-    // 1) Obtener el año desde query params (ej: ?year=2025)
-    const year = req.query.year;
+    const { year } = req.query;
+    
+    console.log('Checking environment variables:');
+    console.log('PAGE_ID:', process.env.FACEBOOK_PAGE_ID ? 'Configured' : 'Missing');
+    console.log('ACCESS_TOKEN:', process.env.FACEBOOK_ACCESS_TOKEN ? 'Configured' : 'Missing');
 
-    // Validar que 'year' sea un número de 4 dígitos
-    if (!/^\d{4}$/.test(year)) {
-      return res.status(400).json({ error: "Año inválido. Debe tener 4 dígitos." });
+    const pageId = process.env.FACEBOOK_PAGE_ID;
+    const accessToken = process.env.FACEBOOK_ACCESS_TOKEN;
+
+    if (!pageId || !accessToken) {
+      console.error('Missing credentials:', { pageId: !!pageId, accessToken: !!accessToken });
+      return res.status(500).json({
+        error: true,
+        message: 'Credenciales de Facebook no configuradas. Verifique las variables de entorno FACEBOOK_PAGE_ID y FACEBOOK_ACCESS_TOKEN'
+      });
     }
 
-    // 2) Obtener el PAGE_ID y ACCESS_TOKEN desde variables de entorno
-    const pageId = process.env.PAGE_ID || 'TU_PAGE_ID';
-    const accessToken = process.env.ACCESS_TOKEN || 'TU_ACCESS_TOKEN';
+    if (!year || !/^\d{4}$/.test(year)) {
+      return res.status(400).json({ error: "Año inválido" });
+    }
 
-    // 3) Construir la URL para la Graph API de Facebook
-    const fbUrl = `https://graph.facebook.com/v16.0/${pageId}/photos?fields=images,created_time&access_token=${accessToken}`;
-
-    // 4) Llamar a la Graph API con axios
-    const response = await axios.get(fbUrl);
-    const allPhotos = response.data.data; // array de objetos con info de las fotos
-
-    // 5) Filtrar las fotos por año
-    const filteredPhotos = allPhotos.filter(photo => {
-      const photoYear = new Date(photo.created_time).getFullYear().toString();
-      return photoYear === year;
+    // 1. Construir la URL y hacer la petición a la Graph API
+    const fbUrl = `https://graph.facebook.com/v16.0/${pageId}/photos`;
+    const response = await axios.get(fbUrl, {
+      params: {
+        fields: 'images,created_time',
+        type: 'uploaded', // Filtra solo las fotos subidas
+        access_token: accessToken,
+        limit: 100
+      }
     });
 
-    // 6) Extraer la URL principal de cada foto
-    const photoUrls = filteredPhotos.map(photo => photo.images[0].source);
+    // 2. Log para ver los created_time de cada foto (depuración)
+    response.data.data.forEach((photo, idx) => {
+      console.log(`Photo #${idx}: created_time =`, photo.created_time);
+    });
 
-    // 7) Devolver las fotos en un JSON
-    return res.json({ photos: photoUrls });
+    // 3. Filtrar las fotos según el año y extraer la URL de la imagen
+    const filteredPhotos = response.data.data
+      .filter(photo => new Date(photo.created_time).getFullYear().toString() === year)
+      .map(photo => photo.images[0].source);
+
+    return res.json({ photos: filteredPhotos });
   } catch (error) {
-    console.error('Error al obtener fotos de Facebook:', error);
-    return res.status(500).json({ error: 'Error interno del servidor' });
+    console.error('Error:', error);
+    res.status(500).json({ 
+      error: 'Error al obtener fotos',
+      details: error.message 
+    });
   }
 });
 
