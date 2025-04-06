@@ -1,12 +1,9 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import '../assets/styles/Contacto.css';
-import Footer from '../components/Footer';
 
 export default function Contacto() {
   return (
     <div className="contact-page">
-      <Navbar />
       <div className="contact-container">
         <h1 className="title-contact">Datos de Contacto</h1>
         <div className="contact-info">
@@ -60,7 +57,6 @@ export default function Contacto() {
       ></iframe>
 
       </div>
-      <Footer />
     </div>
   );
 }

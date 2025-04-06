@@ -5,16 +5,112 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Página de Reglamentos */
+.reglamentos-page {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+/* Hero de Reglamentos */
+.reglamentos-hero {
+  background: linear-gradient(135deg, #630a0a 0%, #c24848 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.reglamentos-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /* Contenedor principal */
 .reglamentos-container {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  animation: fadeIn 1s ease-out;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Tarjetas */
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card h2 {
+  color: #000000;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.card ul li {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.card ul li::before {
+  content: "•";
+  color: #7a1a1a;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Botón de descarga */
+.download-btn {
+  background-color: #9b2b2b;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.download-btn:hover {
+  background-color: #701010;
 }
 
 /* Título principal */
@@ -67,6 +163,22 @@ body {
 
 /* Responsividad */
 @media (max-width: 768px) {
+  .reglamentos-hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
   .title-reglamentos {
     font-size: 36px;
   }
@@ -81,6 +193,14 @@ body {
 }
 
 @media (max-width: 480px) {
+  .reglamentos-hero {
+    padding: 3rem 1rem;
+  }
+
+  .reglamentos-container {
+    padding: 0 1rem;
+  }
+
   .title-reglamentos {
     font-size: 30px;
   }

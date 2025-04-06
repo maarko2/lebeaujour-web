@@ -159,6 +159,51 @@
   color: #007bff;
 }
 
+.facebook-gallery-card {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.facebook-gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.facebook-icon {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-content {
+  flex: 1;
+}
+
+.gallery-content h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.gallery-content p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
 @media (max-width: 768px) {
   .galeria-container {
     padding: 2rem 1rem;

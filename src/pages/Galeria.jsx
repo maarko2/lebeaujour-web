@@ -1,46 +1,31 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import { useNavigate } from 'react-router-dom';
 import '../assets/styles/Galeria.css';
-import carpeta from '../assets/images/folder-icon.png';
+import { FaFacebook } from 'react-icons/fa';
 
 export default function Galeria() {
-  const navigate = useNavigate();
-  const years = [2023, 2024, 2025];
-  
-  const handleFolderClick = (year) => {
-    navigate(`/galeria/${year}`);
+
+  const handleFacebookClick = () => {
+    window.open('https://www.facebook.com/CollegeLeBeauJour/photos_by', '_blank');
   };
   
   return (
     <div className="page-container">
-      <Navbar />
       <main className="galeria-container">
         <div className="galeria-header">
           <h1>Galería Fotográfica</h1>
-          <p>Explora nuestra colección de momentos especiales por año</p>
+          <p>Descubre todos nuestros momentos especiales en Facebook</p>
         </div>
         
-        <div className="folders-grid">
-          {years.map((year) => (
-            <div
-              key={year}
-              className="folder-card"
-              onClick={() => handleFolderClick(year)}
-            >
-              <div className="folder-icon">
-                <img src={carpeta} alt={`Carpeta ${year}`} />
-              </div>
-              <div className="folder-info">
-                <h3>{year}</h3>
-                <p>Ver fotografías</p>
-              </div>
-            </div>
-          ))}
+        <div className="facebook-gallery-card" onClick={handleFacebookClick}>
+          <div className="facebook-icon">
+            <FaFacebook size={60} />
+          </div>
+          <div className="gallery-content">
+            <h2>Visita nuestra Galería en Facebook</h2>
+            <p>Click aquí para ver todas nuestras fotografías</p>
+          </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

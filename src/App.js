@@ -6,22 +6,32 @@ import Reglamentos from './pages/Reglamentos';
 import Footer from './components/Footer';
 import AboutUs from './pages/AboutUs';
 import PhotoGaleria from './pages/PhotoGaleria';
+import Navbar from './components/Navbar';
+import News  from './pages/News';
+import Historia from './pages/Historia';
+import EquipoDirectivo from './pages/Equipo-Directivo';
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        {/* Ruta raíz ("/"): Cuando el usuario entre a la URL base, verá el componente Home */}
+        {/* Ruta raíz ("/") */}
         <Route path="/" element={<Home />} />
         <Route path="/galeria" element={<Galeria />} />
+        <Route path="/news" element={<News />} />
+        {/* Components */}
+        <Route path="/footer" element={<Footer />} />
         <Route path="/contacto" element={<Contacto />} />
+        {/* Pages */}
         <Route path="/reglamentos" element={<Reglamentos />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/footer" element={<Footer />} />
+        <Route path="/historia" element={<Historia />} />
+        <Route path="/equipo-directivo" element={<EquipoDirectivo />} />
         <Route path="/galeria/:year" element={<PhotoGaleria />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      
+      <Footer />
     </Router>
   );
 }

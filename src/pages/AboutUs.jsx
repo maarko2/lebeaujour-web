@@ -1,71 +1,75 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import '../assets/styles/AboutUs.css';
 
-import imagen from '../assets/images/imagen-aboutus-1.jpg';
-import imgColegio1 from '../assets/images/imgColegio1.jpg'
-import imgColegio2 from '../assets/images/imgColegio2.jpg'
-import imgColegio3 from '../assets/images/imgColegio3.jpg'
-import imgReconocimientos1 from '../assets/images/imgReconocimientos1.jpg'
-import imgReconocimientos2 from '../assets/images/imgReconocimientos2.jpg'
-import imgReconocimientos3 from '../assets/images/imgReconocimientos3.jpg'
-export default function AboutUs() {
+import LeBeauJour from '../assets/images/imgColegio2.jpg';
+import NuestraVision from '../assets/images/imgColegio3.jpg';
+import NuestraMision from '../assets/images/imagen-aboutus-1.jpg';
+
+const AboutUs = () => {
   return (
-    <div className="aboutus-container">
-      <Navbar />
-      <img src={imagen} alt="Imagen Colegio" className="img-aboutus" />
-      <div className="aboutus-hero">
-        <div className="hero-text">
-          <h1 className="hero-tittle-1">
-            NUESTRO<br/>COLEGIO</h1>
-          <p className="hero-paragraph">
-            Somos una organización sin fines de lucro que busca mejorar la educación. 
-            Nuestro objetivo es brindar una educación de calidad a niños y jóvenes 
-            para que puedan tener un futuro mejor, lleno de oportunidades.
-          </p>
+    <div className="about-us-container">
+      <div className="about-us-content">
+        <h1>Sobre Nosotros</h1>
+        
+        <div className="about-section">
+          <div className="about-image">
+            <img src={LeBeauJour} alt="Interior del colegio" />
+          </div>
+          
+          <div className="about-text">
+            <h2>Le Beau Jour</h2>
+            <p>
+            Collège Chrétien Français "Le Beau Jour" es un establecimiento 
+            educativo particular subvencionado que ofrece educación parvularia y básica, 
+            comprometido con la formación integral de niños y niñas. Con una sólida base en valores cristianos y una enseñanza trilingüe personalizada,
+            nuestro colegio se centra en desarrollar estudiantes autónomos, críticos y solidarios 
+            a través de metodologías innovadoras y un enfoque holístico.
+            </p>
+            <p>
+            Fomentamos un ambiente de convivencia democrática y equidad, donde cada alumno 
+            es estimulado a alcanzar la excelencia académica y el desarrollo cognitivo-emocional, 
+            preparándolos para enfrentar los desafíos de la vida con responsabilidad y compromiso.
+            </p>
+          </div>
+        </div>
+
+        
+         {/* Sección de Visión */}
+         <div className="about-section">
+          <div className="about-text">
+            <h2>Nuestra Visión</h2>
+              <p>
+                Aspiramos a ser un referente de excelencia educativa donde la formación académica se integre armónicamente con el desarrollo personal y social.
+              </p>
+              <p>
+                Visualizamos un entorno inclusivo y equitativo que prepare a nuestros alumnos para vivir una vida plena, productiva y comprometida con el bien común, impulsando ciudadanos solidarios y transformadores.
+              </p>
+          </div>
+          <div className="about-image">
+            <img src={NuestraVision} alt="Interior del colegio" />
+          </div>
+        </div>
+        
+
+
+        {/* Sección de Misión */}
+        <div className="about-section">
+          <div className="about-image">
+            <img src={NuestraMision} alt="Interior del colegio" />
+          </div>
+          <div className="about-text">
+            <h2>Nuestra Misión</h2>
+            <p>
+                Formar estudiantes autónomos, críticos y comprometidos mediante una educación integral basada en valores cristianos y una enseñanza trilingüe personalizada.
+              </p>
+              <p>
+                Buscamos fomentar una cultura de altas expectativas y responsabilidad social, utilizando metodologías innovadoras que desarrollen habilidades y destrezas, y fortalezcan tanto el crecimiento académico como el desarrollo cognitivo-emocional.
+              </p>
+          </div>
         </div>
       </div>
-      <div className="images-container">
-            <img src={imgColegio2} alt="Imagen 1" />
-            <img src={imgColegio1} alt="Imagen 2" />
-            <img src={imgColegio3} alt="Imagen 3" />
-      </div>
-      <div className="aboutus-hero">
-        <div className="hero-text">
-          <h1 className="hero-tittle-2">
-            LOGROS Y<br/>
-            <span className="hero-subtittle-2">RECONOCIMIENTOS</span>
-          </h1>
-          <p className="hero-paragraph">
-            Somos una organización sin fines de lucro que busca mejorar la educación. 
-            Nuestro objetivo es brindar una educación de calidad a niños y jóvenes 
-            para que puedan tener un futuro mejor, lleno de oportunidades.
-          </p>
-        </div>
-      </div>
-      <div className="images-container">
-            <img src={imgReconocimientos1} alt="Imagen 1" />
-            <img src={imgReconocimientos2} alt="Imagen 2" />
-            <img src={imgReconocimientos3} alt="Imagen 3" />
-      </div>
-      <div className="aboutus-hero">
-        <div className="hero-text">
-          <h1 className="hero-tittle-1">
-            NUESTRA<br/>HISTORIA</h1>
-          <p className="hero-paragraph">
-            Somos una organización sin fines de lucro que busca mejorar la educación. 
-            Nuestro objetivo es brindar una educación de calidad a niños y jóvenes 
-            para que puedan tener un futuro mejor, lleno de oportunidades.
-          </p>
-        </div>
-      </div>
-      <div className="images-container">
-            <img src="ruta-de-la-imagen-1.jpg" alt="Imagen 1" />
-            <img src="ruta-de-la-imagen-2.jpg" alt="Imagen 2" />
-            <img src="ruta-de-la-imagen-3.jpg" alt="Imagen 3" />
-      </div>
-      <Footer />
     </div>
   );
-}
+};
+
+export default AboutUs;

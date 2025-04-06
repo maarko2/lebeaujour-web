@@ -29,10 +29,19 @@ const Navbar = () => {
               <Link to="/galeria" className="navLink">Galeria</Link>
             </li>
             <li className="navItem">
-              <Link to="/aboutus" className="navLink">Quíenes Somos</Link>
+              <Link to="/news" className="navLink">Noticias</Link>
+            </li>
+            <li className="navItem">
+              <Link to="/aboutus" className="navLink">Sobre Nosotros</Link>
             </li>
             <li className="navItem">
               <Link to="/reglamentos" className="navLink">Reglamentos y Protocolos</Link>
+            </li>
+            <li className="navItem">
+              <Link to="/historia" className="navLink">Nuestra Historia</Link>
+            </li>
+            <li className="navItem">
+              <Link to="/equipo-directivo" className="navLink">Equipo Directivo</Link>
             </li>
           </ul>
         </div>
@@ -62,19 +71,22 @@ const Navbar = () => {
                   <Link to="/" className="popup-navLink" onClick={toggleMenu}>Inicio</Link>
                 </li>
                 <li className="popup-navItem">
-                  <Link to="/noticias" className="popup-navLink" onClick={toggleMenu}>Noticias</Link>
-                </li>
-                <li className="popup-navItem">
                   <Link to="/galeria" className="popup-navLink" onClick={toggleMenu}>Galeria</Link>
                 </li>
                 <li className="popup-navItem">
-                  <Link to="/aboutus" className="popup-navLink" onClick={toggleMenu}>Quíenes Somos</Link>
+                  <Link to="/news" className="popup-navLink" onClick={toggleMenu}>Noticias</Link>
+                </li>
+                <li className="popup-navItem">
+                  <Link to="/aboutus" className="popup-navLink" onClick={toggleMenu}>Sobre Nosotros</Link>
                 </li>
                 <li className="popup-navItem">
                   <Link to="/reglamentos" className="popup-navLink" onClick={toggleMenu}>Reglamentos y Protocolos</Link>
                 </li>
                 <li className="popup-navItem">
-                  <Link to="/simce" className="popup-navLink" onClick={toggleMenu}>SIMCE</Link>
+                  <Link to="/historia" className="popup-navLink" onClick={toggleMenu}>Nuestra Historia</Link>
+                </li>
+                <li className="popup-navItem">
+                  <Link to="/equipo-directivo" className="popup-navLink" onClick={toggleMenu}>Equipo Directivo</Link>
                 </li>
               </ul>
             </div>

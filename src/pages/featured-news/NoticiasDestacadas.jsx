@@ -1,11 +1,10 @@
 import React from "react";
-import '../assets/styles/NoticiasDestacadas.css';
+import '../../assets/styles/NoticiasDestacadas.css';
 
 export default function NoticiasDestacadas() {
   return (
     <div className="box-noticias">
       <div className="container-fluid">
-        {/* Título de la sección (opcional) */}
         <h2 className="titulo-seccion">Noticias Destacadas</h2>
 
         <div className="row flex">
@@ -21,9 +20,9 @@ export default function NoticiasDestacadas() {
                 <div className="color-gradient"></div>
               </div>
               <div className="cuerpo-noticia">
-                <h3>Proceso de admisión Prekínder 2025</h3>
+                <h3>Matriculate</h3>
                 <p>
-                  El Lunes 10 de Marzo comienza el proceso de admisión para el año 2025. ¡No te quedes fuera!
+                  Ingresa aquí para iniciar el proceso de matrícula para el año 2025.
                 </p>
                 <a href="#">
                   Leer más
