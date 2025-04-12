@@ -1,4 +1,5 @@
 import React from 'react';
+import Map from '../components/Google-Maps/Map'; // Corregir la ruta de importación
 import '../assets/styles/Contacto.css';
 
 export default function Contacto() {
@@ -43,20 +44,7 @@ export default function Contacto() {
       </div>
 
       {/* Mapa fuera del contenedor de contacto */}
-      <div className="map-container">
-      <iframe
-        title="Ubicación Colegio Le Beau Jour"
-        src="https://maps.google.com/maps?q=Colegio%20Le%20Beau%20Jour%2C%2023%20Nte.%2C%202530192%20Vi%C3%B1a%20del%20Mar%2C%20Valpara%C3%ADso%2C%20Chile&output=embed&iwloc=0"
-        width="100%"
-        height="300"
-        frameBorder="0"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        aria-hidden="false"
-        tabIndex="0"
-      ></iframe>
-
-      </div>
+      <Map />
     </div>
   );
 }

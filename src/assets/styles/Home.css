@@ -125,3 +125,45 @@
     padding: 8px 16px;
   }
 }
+  
+.location-section {
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+}
+
+.location-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.location-title {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.location-details {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.location-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.location-address {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.location-map {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+}
