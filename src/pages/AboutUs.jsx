@@ -1,9 +1,9 @@
 import React from 'react';
 import '../assets/styles/AboutUs.css';
-
-import LeBeauJour from '../assets/images/imgColegio2.jpg';
-import NuestraVision from '../assets/images/imgColegio3.jpg';
-import NuestraMision from '../assets/images/imagen-aboutus-1.jpg';
+/* Imagenes */
+import LeBeauJour from '../assets/images/images-aboutus/imagen-aboutus-3.webp';
+import NuestraVision from '../assets/images/images-aboutus/imagen-aboutus-2.webp';
+import NuestraMision from '../assets/images/images-aboutus/imagen-aboutus-1.webp';
 
 const AboutUs = () => {
   return (

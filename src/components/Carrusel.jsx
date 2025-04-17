@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/styles/Carrusel.css';
-import imagen1 from '../assets/images/imagen-inicio-1.jpg';
-import imagen2 from '../assets/images/imagen-inicio-2.jpg';
-import imagen3 from '../assets/images/imagen-inicio-3.jpg';
-import imagen4 from '../assets/images/imagen-inicio-4.jpg';
+/* Imagenes */
+import imagen1 from '../assets/images/images-carrusel/image-carrusel-1.webp';
+import imagen2 from '../assets/images/images-carrusel/image-carrusel-2.webp';
+import imagen3 from '../assets/images/images-carrusel/image-carrusel-3.webp';
+import imagen4 from '../assets/images/images-carrusel/image-carrusel-4.webp';
 
 const images = [imagen1, imagen2, imagen3, imagen4];
 

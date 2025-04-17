@@ -1,25 +1,31 @@
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 const Map = () => {
   const mapStyles = {
     height: "400px",
     width: "100%"
   };
-  
-  const defaultCenter = {
-    lat: -33.0153481,
-    lng: -71.5500276
-  };
+
+  // Coordenadas del centro del mapa
+  const lat = -33.0153481;
+  const lng = -71.5500276;
+
+  // URL de Google Maps Embed (gratuito, sin API Key)
+  const mapSrc = `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
 
   return (
-    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-      <GoogleMap
-        mapContainerStyle={mapStyles}
-        zoom={15}
-        center={defaultCenter}
-      />
-    </LoadScript>
+    <div style={mapStyles}>
+      <iframe
+        title="Ubicación en Google Maps"
+        src={mapSrc}
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
   );
 };
 

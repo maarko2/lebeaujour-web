@@ -1,9 +1,10 @@
 import React from 'react';
 import '../assets/styles/Historia.css';
-import Fundadores from '../assets/images/fundadores-colegio.png';
+/* Imagenes */
+import Fundadores from '../assets/images/images-historia/image-fundadores-colegio.webp'
 import LineaTemporalImg1 from '../assets/images/LineaTemporal-1.png';
-import LineaTemporalImg2 from '../assets/images/LineaTemporal-2.png';
-import LineaTemporalImg3 from '../assets/images/LineaTemporal-3.png';
+import LineaTemporalImg2 from '../assets/images/LineaTemporal-3.png';
+import LineaTemporalImg3 from '../assets/images/LineaTemporal-2.png';
 
 const Historia = () => {
   return (

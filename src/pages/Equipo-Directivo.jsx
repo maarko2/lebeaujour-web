@@ -2,7 +2,9 @@ import React from 'react';
 import '../assets/styles/Equipo-Directivo.css';
 
 /* Imagenes */
-import MarisolBastos from '../assets/images/imagen-Directora.png';
+import Directora from '../assets/images/imagen-Directora.png';
+import Sub_Directora from '../assets/images/images-directiva/image-sub-directora.webp'
+import Jefe_UTP from '../assets/images/images-directiva/image-jefe-utp.webp'
 
 
 const EquipoDirectivo = () => {
@@ -10,17 +12,17 @@ const EquipoDirectivo = () => {
     {
       nombre: "Marisol Bastos",
       cargo: "Directora",
-      imagen: MarisolBastos
+      imagen: Directora
     },
     {
       nombre: "Nombre Directivo 2",
       cargo: "Subdirectora",
-      imagen: "/path-to-image.jpg"
+      imagen: Sub_Directora
     },
     {
       nombre: "Nombre Directivo 3",
       cargo: "Coordinador Académico",
-      imagen: "/path-to-image.jpg"
+      imagen: Jefe_UTP
     }
   ];
 
