@@ -3,8 +3,9 @@ import '../assets/styles/Equipo-Directivo.css';
 
 /* Imagenes */
 import Directora from '../assets/images/imagen-Directora.png';
-import Sub_Directora from '../assets/images/images-directiva/image-sub-directora.webp'
-import Jefe_UTP from '../assets/images/images-directiva/image-jefe-utp.webp'
+import Sub_Directora from '../assets/images/images-directiva/image-sub-directora.webp';
+import Jefe_UTP from '../assets/images/images-directiva/image-jefe-utp.webp';
+import Encargada_Convicencia from '../assets/images/images-directiva/image-encargada-convivencia.webp';
 
 
 const EquipoDirectivo = () => {
@@ -21,7 +22,7 @@ const EquipoDirectivo = () => {
     },
     {
       nombre: "Nombre Directivo 3",
-      cargo: "Coordinador Académico",
+      cargo: "Jefe de UTP",
       imagen: Jefe_UTP
     }
   ];
@@ -29,8 +30,8 @@ const EquipoDirectivo = () => {
   const convivencia = [
     {
       nombre: "Nombre Directivo 4",
-      cargo: "Coordinador de Convivencia",
-      imagen: "/path-to-image.jpg"
+      cargo: "Encargada de Convivencia",
+      imagen: Encargada_Convicencia
     },
     {
       nombre: "Nombre Directivo 5",
