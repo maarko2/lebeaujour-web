@@ -1,0 +1,116 @@
+.listado-utiles-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../images//images-lis-utiles/banner-listado-utiles.webp') center/cover;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .listado-utiles-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .listado-utiles-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  
+  .curso-section {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .curso-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .curso-section h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+  }
+  
+  .curso-section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .curso-section li {
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  
+  .curso-section h3 {
+    color: #444;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .curso-section.notas {
+    background-color: #fff9e6;
+    border-left: 4px solid #ffd700;
+  }
+  
+  .curso-section.notas h2 {
+    border-bottom-color: #ffd700;
+  }
+  
+  .curso-section:nth-child(1) { animation-delay: 0.2s; }
+  .curso-section:nth-child(2) { animation-delay: 0.4s; }
+  .curso-section:nth-child(3) { animation-delay: 0.6s; }
+  .curso-section:nth-child(4) { animation-delay: 0.8s; }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .listado-utiles-banner {
+      height: 200px;
+    }
+  
+    .listado-utiles-banner h1 {
+      font-size: 2rem;
+    }
+  
+    .curso-section h3 {
+      font-size: 1.1rem;
+    }
+  }

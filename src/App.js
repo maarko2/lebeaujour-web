@@ -10,6 +10,8 @@ import Navbar from './components/Navbar';
 import News  from './pages/News';
 import Historia from './pages/Historia';
 import EquipoDirectivo from './pages/Equipo-Directivo';
+import ListadoUtiles from './pages/featured-news/Listado-Utiles';
+import NewsTemp from './pages/News-temp';
 
 function App() {
   return (
@@ -27,7 +29,9 @@ function App() {
         <Route path="/reglamentos" element={<Reglamentos />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/historia" element={<Historia />} />
+        <Route path="/listado-utiles" element={<ListadoUtiles />} />
         <Route path="/equipo-directivo" element={<EquipoDirectivo />} />
+        <Route path="/news-temp" element={<NewsTemp />} />
         <Route path="/galeria/:year" element={<PhotoGaleria />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

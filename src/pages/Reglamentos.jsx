@@ -27,7 +27,9 @@ export default function Reglamentos() {
               <li>Procedimientos de evaluacion y promoción académica</li>
               <li>Medidas formativas y disciplinarias</li>
             </ul>
-            <button className="download-btn">Descargar Reglamento</button>
+            <a className="download-btn" href="/files/Manual-de-Convivencia-Escolar-2025.docx" download>
+              Descargar Reglamento
+            </a>
           </div>
         </div>
 
@@ -47,7 +49,9 @@ export default function Reglamentos() {
               acoso y procedimientos en caso de accidentes escolares, lo que demuestra un enfoque integral para la protección y 
               bienestar de toda la comunidad educativa.
             </p>
-            <button className="download-btn">Descargar Protocolos</button>
+            <a className="download-btn" href="/files/Reglamento de Evaluacion y promocion ACTUAL.docx" download>
+              Descargar Protocolos
+            </a>
           </div>
         </div>
       </div>

@@ -7,8 +7,8 @@ const Map = () => {
   };
 
   // Coordenadas del centro del mapa
-  const lat = -33.0153481;
-  const lng = -71.5500276;
+  const lat = -33.00467;
+  const lng = -71.53512;
 
   // URL de Google Maps Embed (gratuito, sin API Key)
   const mapSrc = `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;

@@ -2,10 +2,12 @@ import React from 'react';
 import '../assets/styles/Equipo-Directivo.css';
 
 /* Imagenes */
-import Directora from '../assets/images/imagen-Directora.png';
+import Directora from '../assets/images/images-directiva/image-directora.webp';
 import Sub_Directora from '../assets/images/images-directiva/image-sub-directora.webp';
 import Jefe_UTP from '../assets/images/images-directiva/image-jefe-utp.webp';
 import Encargada_Convicencia from '../assets/images/images-directiva/image-encargada-convivencia.webp';
+import Encargado_Convicencia from '../assets/images/images-directiva/image-encargado-convivencia.webp';
+import Educadora_Diferencial from '../assets/images/images-directiva/image-educadora-diferencial.webp';
 
 
 const EquipoDirectivo = () => {
@@ -16,12 +18,12 @@ const EquipoDirectivo = () => {
       imagen: Directora
     },
     {
-      nombre: "Nombre Directivo 2",
+      nombre: "Ruby Bahamondes",
       cargo: "Subdirectora",
       imagen: Sub_Directora
     },
     {
-      nombre: "Nombre Directivo 3",
+      nombre: "Roberto Valdivia",
       cargo: "Jefe de UTP",
       imagen: Jefe_UTP
     }
@@ -29,20 +31,20 @@ const EquipoDirectivo = () => {
 
   const convivencia = [
     {
-      nombre: "Nombre Directivo 4",
+      nombre: "Alejandra Aravena",
       cargo: "Encargada de Convivencia",
       imagen: Encargada_Convicencia
     },
     {
-      nombre: "Nombre Directivo 5",
-      cargo: "Psicólogo Escolar",
-      imagen: "/path-to-image.jpg"
+      nombre: "Mauricio Veit",
+      cargo: "Encargado de Convivencia",
+      imagen: Encargado_Convicencia
     },
     {
-      nombre: "Nombre Directivo 6",
-      cargo: "Orientador",
-      imagen: "/path-to-image.jpg"
-    }
+      nombre: "Andrea Acevedo",
+      cargo: "Educadora Diferencial",
+      imagen: Educadora_Diferencial
+    },
   ];
 
   return (

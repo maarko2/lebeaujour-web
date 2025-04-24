@@ -1,56 +1,57 @@
+// src/components/News.jsx
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../assets/styles/News.css';
 
 export default function News() {
-  const [news, setNews] = useState([]);
+  const [news, setNews]       = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Este useEffect se usará posteriormente para fetch de datos desde MySQL
   useEffect(() => {
-    // Aquí irá la conexión a la base de datos
-    // Por ahora usamos datos de ejemplo
-    const dummyNews = [
-      {
-        id: 1,
-        title: "Inicio del Año Escolar 2025",
-        date: "2025-03-01",
-        image: "/images/placeholder.jpg",
-        description: "Damos la bienvenida a nuestros estudiantes en este nuevo año académico.",
-        category: "Institucional"
-      },
-      // Más noticias de ejemplo...
-    ];
-
-    setNews(dummyNews);
-    setLoading(false);
+    (async () => {
+      try {
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/news`
+        );
+        setNews(data);
+      } catch (err) {
+        console.error('Error cargando noticias', err);
+      } finally {
+        setLoading(false);
+      }
+    })();
   }, []);
+
+  const handleDelete = async (id) => {
+    if (!window.confirm('¿Eliminar esta noticia?')) return;
+    try {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/news/${id}`);
+      setNews(news.filter(item => item.id !== id));
+    } catch (err) {
+      console.error('Error borrando noticia', err);
+      alert('No se pudo eliminar');
+    }
+  };
 
   return (
     <div className="news-page">
-      <div className="news-header">
-        <h1>Noticias y Eventos</h1>
-        <p>Mantente informado sobre las últimas novedades de nuestra institución</p>
-      </div>
-
-      {loading ? (
-        <div className="loading-spinner">
-          <div className="spinner"></div>
-          <p>Cargando noticias...</p>
-        </div>
-      ) : (
+      {/* ...cabecera... */}
+      {loading
+        ? <p>Cargando...</p>
+        : (
         <div className="news-grid">
-          {news.map((item) => (
+          {news.map(item => (
             <article key={item.id} className="news-card">
-              <div className="news-image">
-                <img src={item.image} alt={item.title} />
-                <span className="news-category">{item.category}</span>
-              </div>
-              <div className="news-content">
-                <div className="news-date">{new Date(item.date).toLocaleDateString()}</div>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-                <button className="read-more">Leer más</button>
-              </div>
+              <img
+                src={`${process.env.REACT_APP_API_URL}${item.imagen}`}
+                alt={item.titulo}
+              />
+              <h2>{item.titulo}</h2>
+              <p>{item.descripcion}</p>
+              <small>{new Date(item.fecha_publicacion).toLocaleDateString()}</small>
+              <button onClick={() => handleDelete(item.id)}>
+                Eliminar
+              </button>
             </article>
           ))}
         </div>

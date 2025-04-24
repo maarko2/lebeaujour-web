@@ -1,5 +1,11 @@
 import React from "react";
 import '../../assets/styles/NoticiasDestacadas.css';
+import { Link } from 'react-router-dom';
+
+/* Imagenes */
+import imagenNoticiaUtilesEscolares from '../../assets/images/images-featured-news/image-utiles-escolares-2025.webp';
+import imagenNoticiaAdmision from '../../assets/images/images-featured-news/image-admision.webp';
+import imagenNoticiaHorariosAtencion from '../../assets/images/images-featured-news/image-horario-atencion.webp';
 
 export default function NoticiasDestacadas() {
   return (
@@ -14,7 +20,7 @@ export default function NoticiasDestacadas() {
               <div
                 className="img-noticia"
                 style={{
-                  backgroundImage: `url('https://blog.unitips.cl/hubfs/Blog/06.24_Proceso%20de%20admisi%C3%B3n%202025/Proceso-de-admision-2025.png')`,
+                  backgroundImage: `url(${imagenNoticiaAdmision})`,
                 }}
               >
                 <div className="color-gradient"></div>
@@ -37,7 +43,7 @@ export default function NoticiasDestacadas() {
               <div
                 className="img-noticia"
                 style={{
-                  backgroundImage: `url('https://plus.unsplash.com/premium_photo-1663957835183-a11d378f63b8?q=80&w=2042&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+                  backgroundImage: `url(${imagenNoticiaUtilesEscolares})`,
                 }}
               >
                 <div className="color-gradient"></div>
@@ -46,9 +52,11 @@ export default function NoticiasDestacadas() {
                 <h3>Listado de útiles 2025</h3>
                 <p>
                   En los siguientes documentos podrán encontrar la lista de
-                  útiles escolares y el uniforme para el año 2025.
+                  útiles escolares para el año 2025.
                 </p>
-                <a href="#">Leer más</a>
+                <Link to="/listado-utiles" className="leer-mas-btn">
+                  Leer más
+                </Link>
               </div>
             </div>
           </div>
@@ -59,7 +67,7 @@ export default function NoticiasDestacadas() {
               <div
                 className="img-noticia"
                 style={{
-                  backgroundImage: `url('https://docplace-riomarca.s3.amazonaws.com/2023/08/Dia-da-secret%C3%A1ria-scaled-e1601477071105.jpg')`,
+                  backgroundImage: `url(${imagenNoticiaHorariosAtencion})`,
                 }}
               >
                 <div className="color-gradient"></div>
