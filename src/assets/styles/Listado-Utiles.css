@@ -1,6 +1,6 @@
 .listado-utiles-banner {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('../images//images-lis-utiles/banner-listado-utiles.webp') center/cover;
+                url('../images/images-featured-news/banner-listado-utiles.webp') center/cover;
     height: 300px;
     display: flex;
     flex-direction: column;

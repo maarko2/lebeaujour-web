@@ -18,6 +18,7 @@ import NewsTemp from './pages/News-temp';
 import EquipoDirectivo from './pages/Equipo-Directivo';
 import Reglamentos from './pages/Reglamentos';
 import ListadoUtiles from './pages/featured-news/Listado-Utiles';
+import HorariosAtencion from './pages/featured-news/Horarios-Atencion';
 
 // Media Pages
 import Galeria from './pages/Galeria';
@@ -45,6 +46,7 @@ function App() {
         <Route path="/equipo-directivo" element={<EquipoDirectivo />} />
         <Route path="/reglamentos" element={<Reglamentos />} />
         <Route path="/listado-utiles" element={<ListadoUtiles />} />
+        <Route path="/horarios-atencion" element={<HorariosAtencion />} />
 
         {/* Media Routes */}
         <Route path="/galeria" element={<Galeria />} />

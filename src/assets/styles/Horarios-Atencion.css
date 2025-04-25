@@ -1,0 +1,114 @@
+.horarios-container {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+              url('/src/assets/images/image-horarios-atencion.png');
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.horarios-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.horarios-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.horarios-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.horarios-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.horario-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.horario-item:last-child {
+  border-bottom: none;
+}
+
+.horario-item:hover {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  transform: translateX(5px);
+}
+
+.dia {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emoji {
+  font-size: 1.4rem;
+}
+
+.horario {
+  color: #666;
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.nota {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px dashed #eee;
+  color: #666;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .horario-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .horario {
+    text-align: left;
+  }
+  
+  .horarios-container h1 {
+    font-size: 2rem;
+  }
+}

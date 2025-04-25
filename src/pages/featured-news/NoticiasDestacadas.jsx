@@ -73,12 +73,14 @@ export default function NoticiasDestacadas() {
                 <div className="color-gradient"></div>
               </div>
               <div className="cuerpo-noticia">
-                <h3>Horarios de Antención</h3>
+                <h3>Horarios de Atención</h3>
                 <p>
                     Revisa los horarios de atención de los distintos departamentos
                     del colegio para el año 2025.
                 </p>
-                <a href="#">Leer más</a>
+                <Link to="/horarios-atencion" className="leer-mas-btn">
+                  Leer más
+                </Link>
               </div>
             </div>
           </div>
