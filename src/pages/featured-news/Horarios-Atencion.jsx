@@ -13,31 +13,31 @@ const HorariosAtencion = () => {
   ];
 
   return (
-    <div className="horarios-container">
-      <div className="horarios-header">
-        <h1>🏫 Horarios de Atención</h1>
-        <p className="subtitle">Estamos aquí para atenderte</p>
+    <>
+      <div className="listado-utiles-banner">
+        <h1>🕐 Horarios de Atención</h1>
+        <p>Conoce nuestros horarios de atención durante la semana</p>
       </div>
-      <div className="horarios-card">
-        <div className="horarios-content">
-          {horarios.map((item, index) => (
-            <div key={index} className="horario-item">
-              <div className="dia">
-                <span className="emoji">{item.emoji}</span>
-                {item.dia}
+
+      <div className="listado-utiles-container">
+        <div className="curso-section">
+          <div className="horarios-content">
+            {horarios.map((item, index) => (
+              <div key={index} className="horario-item">
+                <div className="dia">
+                  <span className="emoji">{item.emoji}</span>
+                  {item.dia}
+                </div>
+                <div className="horario">
+                  {item.horario}
+                  {item.nota && <div className="nota">({item.nota})</div>}
+                </div>
               </div>
-              <div className="horario">
-                {item.horario}
-                {item.nota && <div className="nota">({item.nota})</div>}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="footer-note">
-          <p>🎯 Para mejor atención, te recomendamos agendar una cita</p>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

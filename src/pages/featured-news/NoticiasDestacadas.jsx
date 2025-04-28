@@ -49,7 +49,7 @@ export default function NoticiasDestacadas() {
                 <div className="color-gradient"></div>
               </div>
               <div className="cuerpo-noticia">
-                <h3>Listado de útiles 2025</h3>
+                <h3>Listado de Útiles 2025</h3>
                 <p>
                   En los siguientes documentos podrán encontrar la lista de
                   útiles escolares para el año 2025.

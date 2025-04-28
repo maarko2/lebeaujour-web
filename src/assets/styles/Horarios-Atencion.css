@@ -1,31 +1,27 @@
 .horarios-container {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-              url('/src/assets/images/image-horarios-atencion.png');
-  background-attachment: fixed;
+  position: relative;
   min-height: 100vh;
+  padding-top: 250px; /* Espacio para el banner */
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  overflow-x: hidden; /* Previene scroll horizontal */
 }
 
-.horarios-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.horarios-container h1 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 10px;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.subtitle {
-  color: #666;
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+.horarios-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: url('../images/images-featured-news/banner-horarios-atencion.webp');
+  background-size: cover;
+  background-position: center 40%; /* Ajusta la posición vertical de la imagen */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  z-index: -1;
 }
 
 .horarios-card {
@@ -35,6 +31,9 @@
   padding: 30px;
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .horarios-content {
@@ -109,6 +108,53 @@
   }
   
   .horarios-container h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Importar estilos del banner desde Listado-Utiles */
+.listado-utiles-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('../images/images-featured-news/banner-horarios-atencion.webp') center/cover;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.listado-utiles-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.listado-utiles-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .listado-utiles-banner {
+    height: 200px;
+  }
+  
+  .listado-utiles-banner h1 {
     font-size: 2rem;
   }
 }

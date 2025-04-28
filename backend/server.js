@@ -6,6 +6,7 @@ const path    = require('path');
 const fs      = require('fs');
 const multer  = require('multer');
 const db      = require('./db');
+const facebookRoutes = require('./routes/facebook');
 
 const app = express();
 
@@ -32,6 +33,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // —————————————————————————————
 // Rutas
 // —————————————————————————————
+
+// Rutas de Facebook
+app.use('/api', facebookRoutes);
 
 // 1. Comprobación de que el servidor está arriba
 app.get('/', (req, res) => {
@@ -96,9 +100,7 @@ app.delete('/api/news/:id', async (req, res) => {
   }
 });
 
-// —————————————————————————————
 // Levantar servidor
-// —————————————————————————————
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor escuchando en http://localhost:${PORT}`);
