@@ -7,9 +7,7 @@ const HorariosAtencion = () => {
     { dia: 'Martes', horario: '9:00 a.m. - 7:00 p.m.', emoji: '✏️' },
     { dia: 'Miércoles', horario: '9:00 a.m. - 7:00 p.m.', emoji: '📝' },
     { dia: 'Jueves', horario: '9:00 a.m. - 7:00 p.m.', emoji: '🎨'},
-    { dia: 'Viernes', horario: '9:00 a.m. - 7:00 p.m.', emoji: '📖' },
-    { dia: 'Sábado', horario: '9:00 a.m. - 7:00 p.m.', emoji: '🌟' },
-    { dia: 'Domingo', horario: '9:00 a.m. - 7:00 p.m.', emoji: '🌞' },
+    { dia: 'Viernes', horario: '9:00 a.m. - 7:00 p.m.', emoji: '📖' }
   ];
 
   return (

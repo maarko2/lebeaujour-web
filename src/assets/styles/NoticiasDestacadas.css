@@ -51,10 +51,21 @@ body {
 
 /* Imagen de la noticia */
 .img-noticia {
-  background-position: center;
-  background-size: cover;
-  height: 200px;
-  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-noticia img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* O "contain", dependiendo del diseño */
+  border-radius: 0; /* Puedes usar 12px si deseas bordes redondeados */
+}
+
+.leer-mas-btn{
+  width: 100px;
 }
 
 /* Contenido de la noticia */
@@ -63,6 +74,26 @@ body {
   padding: 20px;
   min-height: 180px;
 }
+
+.cuerpo-noticia a.leer-mas-btn {
+  text-decoration: none;
+  background-color: #004080;  /* Cambia este color a tu gusto */
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  width: 300px;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cuerpo-noticia a.leer-mas-btn:hover {
+  background-color: #002855;  /* Color al pasar el mouse */
+  transform: translateY(-2px);
+}
+
 
 /* Título y texto */
 .cuerpo-noticia h3 {

@@ -7,9 +7,16 @@ export default function ListadoUtiles2025() {
       <div className="listado-utiles-banner">
         <h1>Listado de Útiles Escolares 2025</h1>
         <p>Todo lo que necesitas para comenzar el año escolar</p>
-      </div>
-
+      </div>      
       <div className="listado-utiles-container">
+      <div className="curso-section notas">
+          <h2>📝 Notas Generales:</h2>
+          <ul>
+            <li>Todos los útiles deben venir marcados</li>
+            <li>A lo largo del año se pueden solicitar otros materiales adicionales</li>
+            <li>Se exige higiene personal diaria y materiales específicos para asignaturas prácticas</li>
+          </ul>
+        </div>
         <div className="curso-section">
           <h2>🧒 Pre-Kínder y Kínder</h2>
           <h3>Material Didáctico y Escritorio:</h3>
@@ -82,15 +89,6 @@ export default function ListadoUtiles2025() {
             <li>Escuadra</li>
             <li>Transportador</li>
             <li>Calculadora simple</li>
-          </ul>
-        </div>
-
-        <div className="curso-section notas">
-          <h2>📝 Notas Generales:</h2>
-          <ul>
-            <li>Todos los útiles deben venir marcados</li>
-            <li>A lo largo del año se pueden solicitar otros materiales adicionales</li>
-            <li>Se exige higiene personal diaria y materiales específicos para asignaturas prácticas</li>
           </ul>
         </div>
       </div>

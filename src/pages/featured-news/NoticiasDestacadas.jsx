@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 /* Imagenes */
 import imagenNoticiaUtilesEscolares from '../../assets/images/images-featured-news/image-utiles-escolares-2025.webp';
-import imagenNoticiaAdmision from '../../assets/images/images-featured-news/image-admision.webp';
 import imagenNoticiaHorariosAtencion from '../../assets/images/images-featured-news/image-horario-atencion.webp';
+import imagenNoticiaReconocimientos from '../../assets/images/images-featured-news/image-reconocimientos.webp';
 
 export default function NoticiasDestacadas() {
   return (
@@ -17,20 +17,17 @@ export default function NoticiasDestacadas() {
           {/* Noticia #1 */}
           <div className="col-lg-4">
             <div className="noticia">
-              <div
-                className="img-noticia"
-                style={{
-                  backgroundImage: `url(${imagenNoticiaAdmision})`,
-                }}
-              >
-                <div className="color-gradient"></div>
+              <div className="img-noticia">
+               <img src={imagenNoticiaReconocimientos} alt="Reconocimientos" />
               </div>
+
               <div className="cuerpo-noticia">
-                <h3>Matriculate</h3>
+                <h3>Reconocimientos</h3>
                 <p>
-                  Ingresa aquí para iniciar el proceso de matrícula para el año 2025.
+                  Ingresa aquí para explorar los reconocimientos y logros
+                  obtenidos por nuestros estudiantes.
                 </p>
-                <a href="#">
+                <a href="/reconocimientos" className="leer-mas-btn">
                   Leer más
                 </a>
               </div>
@@ -40,13 +37,8 @@ export default function NoticiasDestacadas() {
           {/* Noticia #2 */}
           <div className="col-lg-4">
             <div className="noticia">
-              <div
-                className="img-noticia"
-                style={{
-                  backgroundImage: `url(${imagenNoticiaUtilesEscolares})`,
-                }}
-              >
-                <div className="color-gradient"></div>
+             <div className="img-noticia">
+               <img src={imagenNoticiaUtilesEscolares} alt="Reconocimientos" />
               </div>
               <div className="cuerpo-noticia">
                 <h3>Listado de Útiles 2025</h3>
@@ -64,13 +56,8 @@ export default function NoticiasDestacadas() {
           {/* Noticia #3 */}
           <div className="col-lg-4">
             <div className="noticia">
-              <div
-                className="img-noticia"
-                style={{
-                  backgroundImage: `url(${imagenNoticiaHorariosAtencion})`,
-                }}
-              >
-                <div className="color-gradient"></div>
+              <div className="img-noticia">
+                 <img src={imagenNoticiaHorariosAtencion} alt="Reconocimientos" />
               </div>
               <div className="cuerpo-noticia">
                 <h3>Horarios de Atención</h3>
