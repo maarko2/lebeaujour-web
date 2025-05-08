@@ -19,7 +19,13 @@ export default function Login() {
     try {
       const { data } = await axios.post(
         `${process.env.REACT_APP_API_URL}/api/login`,
-        { username, password }
+        { username, password },
+        { 
+          withCredentials: true, 
+          headers: {
+            'Content-Type': 'application/json'
+          } 
+        }
       );
 
       localStorage.setItem('token', data.token);

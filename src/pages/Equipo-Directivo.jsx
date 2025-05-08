@@ -15,17 +15,35 @@ const EquipoDirectivo = () => {
     {
       nombre: "Marisol Bastos",
       cargo: "Directora",
-      imagen: Directora
+      imagen: Directora,
+      formacion: [
+        "Profesora de Educación General Básica",
+        "Licenciada en Educación",
+        "Diplomado en Estratégica de Organizaciones Educativas",
+        "Magister en Dirección y Liderazgo para la Gestión Educacional"
+      ]
     },
     {
       nombre: "Ruby Bahamondes",
       cargo: "Subdirectora",
-      imagen: Sub_Directora
+      imagen: Sub_Directora,
+      formacion: [
+        "Profesora de Enseñanza General Básica",
+        "Diplomado en Didáctica del Idioma Francés",
+        "Magíster en Educación Mención Administración y Gestión Educacional"
+      ]
     },
     {
       nombre: "Roberto Valdivia",
       cargo: "Jefe de UTP",
-      imagen: Jefe_UTP
+      imagen: Jefe_UTP,
+      formacion: [
+        "Profesor de Francés",
+        "Profesor de Educación General Básica",
+        "Licenciado en Educación",
+        "Diplomado en Gestión Educativa",
+        "Magister en Gestión Pedagógica y Curricular"
+      ]
     }
   ];
 
@@ -61,7 +79,17 @@ const EquipoDirectivo = () => {
               </div>
               <div className="directivo-info">
                 <h3>{directivo.nombre}</h3>
-                <p>{directivo.cargo}</p>
+                <p className="cargo">{directivo.cargo}</p>
+                {directivo.formacion && (
+                  <div className="formacion-academica">
+                    <h4>Formación Académica</h4>
+                    <ul>
+                      {directivo.formacion.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -78,7 +106,7 @@ const EquipoDirectivo = () => {
               </div>
               <div className="directivo-info">
                 <h3>{directivo.nombre}</h3>
-                <p>{directivo.cargo}</p>
+                <p className="cargo">{directivo.cargo}</p>
               </div>
             </div>
           ))}

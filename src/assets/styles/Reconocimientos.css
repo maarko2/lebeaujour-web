@@ -1,5 +1,5 @@
 .reconocimientos-container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: auto;
     padding: 2rem;
     font-family: 'Segoe UI', sans-serif;
@@ -23,7 +23,7 @@
   .reconocimiento-card {
     background-color: white;
     border-left: 5px solid #0077cc;
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
@@ -57,3 +57,44 @@
     color: #666;
   }
   
+  /* Estilos para las imágenes de reconocimientos */
+  .reconocimiento-imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .reconocimiento-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(48% - 10px);
+    object-fit: cover;
+  }
+
+  .reconocimiento-pucv-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(80% - 10px);
+    object-fit: cover;
+  }
+  
+  .reconocimiento-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Responsive design para dispositivos móviles */
+  @media (max-width: 768px) {
+    .reconocimiento-img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }

@@ -116,6 +116,123 @@
   100% { transform: rotate(360deg); }
 }
 
+/* Estilos para la sección de noticias destacadas */
+.destacadas-section {
+  margin-bottom: 4rem;
+}
+
+.destacadas-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.destacadas-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #4a90e2;
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.destacadas-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.destacada-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  height: 100%;
+}
+
+.destacada-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.destacada-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.destacada-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.destacada-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.destacada-card:hover .destacada-img {
+  transform: scale(1.1);
+}
+
+.destacada-content {
+  padding: 1.5rem;
+}
+
+.destacada-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #2c3e50;
+}
+
+.destacada-content p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.news-separator {
+  border-top: 2px solid #eee;
+  padding-top: 2rem;
+  margin: 1rem 0 3rem;
+  text-align: center;
+}
+
+.news-separator h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  display: inline-block;
+  background: white;
+  padding: 0 1.5rem;
+  margin-top: -1.5rem;
+}
+
+@media (max-width: 900px) {
+  .destacadas-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .destacadas-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .destacada-card {
+    margin-bottom: 1rem;
+  }
+  
+  .news-page {
+    padding: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .news-page {
     padding: 1rem;
