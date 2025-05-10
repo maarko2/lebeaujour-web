@@ -1,24 +1,30 @@
 import React from 'react';
 import '../../assets/styles/Listado-Utiles.css';
+// Importamos la imagen directamente
+import bannerImage from '../../assets/images/images-featured-news/banner-utiles-escolares.webp';
 
 export default function ListadoUtiles2025() {
   return (
     <>
-      <div className="listado-utiles-banner">
-        <h1>Listado de Útiles Escolares 2025</h1>
-        <p>Todo lo que necesitas para comenzar el año escolar</p>
+      <div className="listado-utiles-banner" style={{ 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bannerImage})` 
+      }}>
+        <div className="banner-content">
+          <h1>Listado de Útiles Escolares 2025</h1>
+          <p>Todo lo que necesitas para comenzar el año escolar</p>
+        </div>
       </div>      
       <div className="listado-utiles-container">
-      <div className="curso-section notas">
-          <h2>📝 Notas Generales:</h2>
+        <div className="curso-section notas">
+          <h2>Notas Generales</h2>
           <ul>
-            <li>Todos los útiles deben venir marcados</li>
-            <li>A lo largo del año se pueden solicitar otros materiales adicionales</li>
+            <li>Todos los útiles deben venir marcados con el nombre del estudiante</li>
+            <li>A lo largo del año se pueden solicitar otros materiales adicionales según las necesidades académicas</li>
             <li>Se exige higiene personal diaria y materiales específicos para asignaturas prácticas</li>
           </ul>
         </div>
-        <div className="curso-section">
-          <h2>🧒 Pre-Kínder y Kínder</h2>
+        <div className="curso-section preescolar">
+          <h2>Pre-Kínder y Kínder</h2>
           <h3>Material Didáctico y Escritorio:</h3>
           <ul>
             <li>Cuadernos universitarios cuadro grande (100 hjs, forros azul y rojo)</li>
@@ -46,8 +52,8 @@ export default function ListadoUtiles2025() {
           </ul>
         </div>
 
-        <div className="curso-section">
-          <h2>📚 1º a 4º Básico</h2>
+        <div className="curso-section primaria">
+          <h2>1º a 4º Básico</h2>
           <h3>Cuadernos por Asignatura:</h3>
           <ul>
             <li>Lenguaje (forro rojo)</li>
@@ -69,8 +75,8 @@ export default function ListadoUtiles2025() {
           </ul>
         </div>
 
-        <div className="curso-section">
-          <h2>🧠 5º a 8º Básico</h2>
+        <div className="curso-section secundaria">
+          <h2>5º a 8º Básico</h2>
           <h3>Cuadernos por Asignatura:</h3>
           <ul>
             <li>Lenguaje (universitario 100 hojas)</li>

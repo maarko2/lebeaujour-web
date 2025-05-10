@@ -1,116 +1,227 @@
 .listado-utiles-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('../images/images-featured-news/banner-listado-utiles.webp') center/cover;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    animation: fadeIn 1s ease-out;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 1s ease-out;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.banner-content {
+  z-index: 2;
+  max-width: 800px;
+}
+
+.listado-utiles-banner h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.listado-utiles-banner p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.listado-utiles-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.curso-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out forwards;
+  overflow: hidden;
+}
+
+.section-icon {
+  font-size: 2.5rem;
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  opacity: 0.8;
+  transform: rotate(10deg);
+  z-index: 1;
+}
+
+.curso-section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.curso-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.curso-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+}
+
+.curso-section ul {
+  list-style-type: none;
+  padding-left: 0.5rem;
+}
+
+.curso-section li {
+  color: #555;
+  margin-bottom: 0.7rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.curso-section li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+.curso-section h3 {
+  color: #3498db;
+  margin: 2rem 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Secciones específicas */
+.curso-section.notas {
+  background-color: #fff9e6;
+  border-left: 5px solid #f1c40f;
+}
+
+.curso-section.notas h2::after {
+  background: #f1c40f;
+}
+
+.curso-section.notas li::before {
+  color: #f1c40f;
+}
+
+.curso-section.preescolar {
+  background-color: #f1f8ff;
+  border-left: 5px solid #3498db;
+}
+
+.curso-section.primaria {
+  background-color: #f0fff4;
+  border-left: 5px solid #2ecc71;
+}
+
+.curso-section.primaria h2::after {
+  background: #2ecc71;
+}
+
+.curso-section.primaria li::before {
+  color: #2ecc71;
+}
+
+.curso-section.secundaria {
+  background-color: #fff0f5;
+  border-left: 5px solid #e74c3c;
+}
+
+.curso-section.secundaria h2::after {
+  background: #e74c3c;
+}
+
+.curso-section.secundaria li::before {
+  color: #e74c3c;
+}
+
+.curso-section:nth-child(1) { animation-delay: 0.2s; }
+.curso-section:nth-child(2) { animation-delay: 0.4s; }
+.curso-section:nth-child(3) { animation-delay: 0.6s; }
+.curso-section:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .listado-utiles-banner {
+    height: 220px;
+  }
+
   .listado-utiles-banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .listado-utiles-container {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+    font-size: 2rem;
   }
   
   .curso-section {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 0.6s ease-out forwards;
+    padding: 2rem 1.5rem;
   }
   
-  .curso-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  .section-icon {
+    font-size: 2rem;
+    top: -10px;
+    right: 15px;
+  }
+
+  .curso-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .curso-section h3 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .listado-utiles-banner h1 {
+    font-size: 1.8rem;
+  }
+  
+  .curso-section {
+    padding: 1.8rem 1.2rem;
   }
   
   .curso-section h2 {
-    color: #333;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
   }
-  
-  .curso-section ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-  }
-  
-  .curso-section li {
-    color: #666;
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-  }
-  
-  .curso-section h3 {
-    color: #444;
-    margin: 1.5rem 0 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  
-  .curso-section.notas {
-    background-color: #fff9e6;
-    border-left: 4px solid #ffd700;
-  }
-  
-  .curso-section.notas h2 {
-    border-bottom-color: #ffd700;
-  }
-  
-  .curso-section:nth-child(1) { animation-delay: 0.2s; }
-  .curso-section:nth-child(2) { animation-delay: 0.4s; }
-  .curso-section:nth-child(3) { animation-delay: 0.6s; }
-  .curso-section:nth-child(4) { animation-delay: 0.8s; }
-  
-  @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .listado-utiles-banner {
-      height: 200px;
-    }
-  
-    .listado-utiles-banner h1 {
-      font-size: 2rem;
-    }
-  
-    .curso-section h3 {
-      font-size: 1.1rem;
-    }
-  }
+}

@@ -5,7 +5,7 @@ import FormularioNews from '../components/FormularioNews';
 import '../assets/styles/News.css';
 
 // Importando las imágenes para noticias destacadas
-import bannerHorarios from '../assets/images/images-featured-news/banner-horarios-atencion.webp';
+import bannerHorarios from '../assets/images/images-featured-news/banner-horarios-atencion.png';
 import bannerListadoUtiles from '../assets/images/images-featured-news/banner-utiles-escolares.webp';
 import bannerReconocimientos from '../assets/images/images-featured-news/banner-reconocimientos.webp';
 

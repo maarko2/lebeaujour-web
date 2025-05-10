@@ -13,7 +13,6 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Historia from './pages/Historia';
 import News from './pages/News';
-import NewsTemp from './pages/News-temp';
 
 // Academic Pages
 import EquipoDirectivo from './pages/Equipo-Directivo';
@@ -46,7 +45,6 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/historia" element={<Historia />} />
         <Route path="/news" element={<News />} />
-        <Route path="/news-temp" element={<NewsTemp />} />
 
         {/* Academic Routes */}
         <Route path="/equipo-directivo" element={<EquipoDirectivo />} />
