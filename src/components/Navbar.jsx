@@ -35,7 +35,7 @@ const Navbar = () => {
               <Link to="/aboutus" className="navLink">Sobre Nosotros</Link>
             </li>
             <li className="navItem">
-              <Link to="/reglamentos" className="navLink">Reglamentos y Protocolos</Link>
+              <Link to="/reglamentos" className="navLink">Documentos</Link>
             </li>
             <li className="navItem">
               <Link to="/historia" className="navLink">Nuestra Historia</Link>
@@ -80,7 +80,7 @@ const Navbar = () => {
                   <Link to="/aboutus" className="popup-navLink" onClick={toggleMenu}>Sobre Nosotros</Link>
                 </li>
                 <li className="popup-navItem">
-                  <Link to="/reglamentos" className="popup-navLink" onClick={toggleMenu}>Reglamentos y Protocolos</Link>
+                  <Link to="/reglamentos" className="popup-navLink" onClick={toggleMenu}>Documentos</Link>
                 </li>
                 <li className="popup-navItem">
                   <Link to="/historia" className="popup-navLink" onClick={toggleMenu}>Nuestra Historia</Link>

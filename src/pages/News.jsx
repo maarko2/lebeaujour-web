@@ -14,6 +14,7 @@ export default function News() {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
   const [formData, setFormData] = useState({
     titulo: '',
     descripcion: '',
@@ -108,6 +109,16 @@ export default function News() {
     window.location.reload();
   };
 
+  // Función para abrir noticia en modal
+  const abrirNoticiaModal = (noticia) => {
+    setNoticiaSeleccionada(noticia);
+  };
+
+  // Función para cerrar modal de noticia
+  const cerrarNoticiaModal = () => {
+    setNoticiaSeleccionada(null);
+  };
+
   // Función para generar la URL completa de la imagen
   const getImageUrl = (imagePath) => {
     // Si la imagen ya incluye la URL completa, la devolvemos tal cual
@@ -182,28 +193,34 @@ export default function News() {
 
       {loading ? (
         <div className="loading-spinner"><div className="spinner" /></div>
-      ) : (
-        <div className="news-grid">
+      ) : (        <div className="news-grid">
           {news.map(item => (
-            <article key={item.id} className="news-card">
+            <article key={item.id} className="news-card" onClick={() => abrirNoticiaModal(item)}>
               <div className="news-image">
                 <img src={getImageUrl(item.imagen)} alt={item.titulo} />
                 <div className="news-category">{item.tipo_noticia}</div>
               </div>
               <div className="news-content">
                 <h2>{item.titulo}</h2>
-                <p>{item.descripcion}</p>
+                <p>{item.descripcion.length > 150 ? item.descripcion.substring(0, 150) + '...' : item.descripcion}</p>
                 <div className="news-date">{new Date(item.fecha).toLocaleDateString()}</div>
+                <button className="read-more-btn">Leer más</button>
                 {isAuthenticated && (
-                  <button className="read-more" onClick={() => handleDelete(item.id)}>Eliminar</button>
+                  <button 
+                    className="delete-btn" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDelete(item.id);
+                    }}
+                  >
+                    Eliminar
+                  </button>
                 )}
               </div>
             </article>
           ))}
         </div>
-      )}
-
-      {mostrarFormulario && isAuthenticated && (
+      )}      {mostrarFormulario && isAuthenticated && (
         <FormularioNews
           formData={formData}
           onChange={handleChange}
@@ -211,6 +228,51 @@ export default function News() {
           onClose={() => setMostrarFormulario(false)}
           mensaje={mensaje}
         />
+      )}
+
+      {/* Modal para mostrar noticia completa */}
+      {noticiaSeleccionada && (
+        <div className="noticia-modal-overlay" onClick={cerrarNoticiaModal}>
+          <div className="noticia-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="noticia-close-btn" onClick={cerrarNoticiaModal}>×</button>
+            
+            <div className="noticia-modal-header">
+              <div className="noticia-category-badge">{noticiaSeleccionada.tipo_noticia}</div>
+              <h1 className="noticia-modal-title">{noticiaSeleccionada.titulo}</h1>
+              <div className="noticia-modal-date">
+                📅 {new Date(noticiaSeleccionada.fecha).toLocaleDateString('es-ES', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </div>
+            </div>
+
+            <div className="noticia-modal-image">
+              <img src={getImageUrl(noticiaSeleccionada.imagen)} alt={noticiaSeleccionada.titulo} />
+            </div>
+
+            <div className="noticia-modal-body">
+              <div className="noticia-modal-description">
+                {noticiaSeleccionada.descripcion}
+              </div>
+            </div>
+
+            {isAuthenticated && (
+              <div className="noticia-modal-actions">
+                <button 
+                  className="delete-btn-modal" 
+                  onClick={() => {
+                    handleDelete(noticiaSeleccionada.id);
+                    cerrarNoticiaModal();
+                  }}
+                >
+                  🗑️ Eliminar Noticia
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );

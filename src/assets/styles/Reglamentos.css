@@ -39,12 +39,32 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
   gap: 2rem;
   margin-bottom: 3rem;
   text-align: center;
   border-radius: 8px;
 }
+
+/* Orden específico para las tarjetas */
+.card:nth-child(1) { 
+  order: 1; 
+  grid-column: 1;
+  grid-row: 1;
+} /* Reglamentos */
+
+.card:nth-child(2) { 
+  order: 2; 
+  grid-column: 2;
+  grid-row: 1;
+} /* Protocolos */
+
+.card:nth-child(3) { 
+  order: 3; 
+  grid-column: 1 / -1;
+  grid-row: 2;
+} /* Ley TEA - va abajo ocupando todo el ancho */
 
 /* Tarjetas */
 .card {
@@ -101,16 +121,29 @@ body {
   background-color: #9b2b2b;
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   width: 100%;
+  max-width: 300px;
   font-size: 1rem;
+  font-weight: 500;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  display: block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .download-btn:hover {
   background-color: #701010;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Título principal */
@@ -169,6 +202,28 @@ body {
 
   .hero-subtitle {
     font-size: 1rem;
+  }  .reglamentos-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  /* Resetear grid en móvil */
+  .card:nth-child(1) { 
+    order: 1; 
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .card:nth-child(2) { 
+    order: 2; 
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .card:nth-child(3) { 
+    order: 3; 
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .card-content {
@@ -177,6 +232,12 @@ body {
 
   .card h2 {
     font-size: 1.5rem;
+  }
+
+  .download-btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+    max-width: 280px;
   }
 
   .title-reglamentos {
@@ -199,6 +260,17 @@ body {
 
   .reglamentos-container {
     padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .card-content {
+    padding: 1.25rem;
+  }
+
+  .download-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    max-width: 100%;
   }
 
   .title-reglamentos {
@@ -220,11 +292,21 @@ body {
 
 @media (max-width: 600px) {
   .reglamentos-container {
-    padding: 10px;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .download-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
   }
 
   .reglamentos-section {
-    padding: 10px;
+    padding: 15px;
   }
 }
 

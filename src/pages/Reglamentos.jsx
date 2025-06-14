@@ -5,9 +5,9 @@ export default function Reglamentos() {
   return (
     <div className="reglamentos-page">
       <div className="reglamentos-hero">
-        <h1>Reglamentos y Protocolos</h1>
+        <h1>Documentos</h1>
         <p className="hero-subtitle">
-          Garantizando un ambiente seguro y armonioso para nuestra comunidad educativa
+          En esta sección encontrarás los documentos que rigen la convivencia escolar en nuestro colegio.
         </p>
       </div>
 
@@ -51,6 +51,27 @@ export default function Reglamentos() {
             </p>
             <a className="download-btn" href="/files/Reglamento de Evaluacion y promocion ACTUAL.docx" download>
               Descargar Protocolos
+            </a>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-content">
+            <h2>Ley TEA</h2>
+            <p>
+            Nuestro colegio, en su compromiso con la inclusión y el bienestar de todos los estudiantes, 
+            ha desarrollado una serie de documentos y protocolos en el marco de la Ley N°21.545, conocida 
+            como Ley TEA. Estos recursos están diseñados para asegurar la protección de los derechos, la atención 
+            integral y la inclusión de las personas con Trastorno del Espectro Autista (TEA) en nuestra comunidad educativa.
+            </p>
+            <ul>
+              <li> <strong>Protocolo de Desregulación Emocional para Niños con Condición Espectro Autista:</strong> Este protocolo establece los procedimientos para facilitar la autorregulación emocional de los estudiantes con TEA, con el objetivo de crear un entorno seguro y tranquilo.  Incluye estrategias de prevención, acompañamiento y uso de espacios dedicados para el bienestar del estudiante.</li>
+              <li> <strong>Certificado Laboral para Apoderados (Ley TEA):</strong> Se proporciona un formato de certificado para que padres, madres o tutores de estudiantes con TEA puedan justificar su ausencia laboral en situaciones de emergencia, conforme a lo estipulado en la Ley N°21.545. </li>
+            </ul>
+            <a className="download-btn" href="/files/Certificado laboral para apoderados Le beau jour.pdf" download>
+              Descargar Protocolo
+            </a>
+            <a className="download-btn" href="/files/PROTOCOLO DESREGULACION COLEGIO LE BEAU JOUR.pdf" download>
+              Descargar Certificado Laboral
             </a>
           </div>
         </div>
